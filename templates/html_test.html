@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snow Day</title>
+    <style>
+        h1 {
+            color: blue
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #color-spec {
+            color: green
+        }
+
+        #table-spec {
+            border: 1px solid red
+        }
+    </style>
+</head>
+<body>
+<h1>This is the largest heading</h1>
+<h2 id="color-spec">This is using a color spec</h2>
+<h3 style="color:red">This is a smaller heading</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Income</th>
+        <th>City</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Qing Sheng</td>
+        <td>450,000</td>
+        <td>New York</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Joe Schmoe</td>
+        <td>175,000</td>
+        <td>San Francisco</td>
+        <td>42</td>
+    </tr>
+    <tr>
+        <td>Ginger Hebblethwaite</td>
+        <td>54,000</td>
+        <td>Croydon</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Bjorn Sorensdottir</td>
+        <td>556.0000</td>
+        <td>Selfoss</td>
+        <td>35</td>
+    </tr>
+</table>
+
+<h1>Welcome!</h1>
+<h3>Looking for recipes? Try:</h3>
+<ul>
+    <li><a href="https://www.epicurious.com">Epicurious</a></li>
+    <li><a href="https://www.allrecipes.com">Allrecipes</a></li>
+</ul>
+
+<h1>An example of an html form</h1>
+<form action="{% url 'showformresults' %}" method="get">
+    <table id="table-spec">
+        <tr>
+            <td>Your name:</td>
+            <td><input style="color:blue" name="name" value="type your name" type="text"></td>
+        </tr>
+        <tr>
+            <td>Requested date:</td>
+            <td><input name="date" type="date" value=""></td>
+        </tr>
+        <tr>
+            <td>Amount you can pay:</td>
+            <td><input name="dollars" type="number" step="0.01" min="0" max="500"></td>
+        </tr>
+        <tr>
+            <td><input name="process" type="submit" value="Process Me"></td>
+            <td><input name="check" type="submit" value="Check me"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

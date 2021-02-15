@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Menu for Restaurants</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.2fr 0.1fr 2.7fr 0.3fr;
+            gap: 0px 0px;
+            grid-template-areas:
+            "Head"
+            "Menu"
+            "Body"
+            "Bottom";
+        }
+
+        .Head {
+            grid-area: Head;
+        }
+
+        .Menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-template-areas:
+            "menu1 menu2 Menu3";
+            grid-area: Menu;
+        }
+
+        .menu1 {
+            grid-area: menu1;
+        }
+
+        .menu2 {
+            grid-area: menu2;
+        }
+
+        .Menu3 {
+            grid-area: Menu3;
+        }
+
+        .Body {
+            grid-area: Body;
+            text-align: center;
+        }
+
+        .Bottom {
+            grid-area: Bottom;
+            background-color: gray;
+        }
+
+        #header {
+            color: Black;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .menu {
+            color: Blue;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="Head">
+        <p id="header"> Photo Menu for Restaurants</p>
+    </div>
+
+    <div class="Menu">
+        <div class="menu1" style="background-color: #a1edcc"><p class="menu"> Home </p></div>
+        <div class="menu2" style="background-color: #f497f1"><p class="menu"> Restaurants </p></div>
+        <div class="Menu3" style="background-color: antiquewhite"><p class="menu"> Menu </p></div>
+    </div>
+
+    <div class="Body">
+        <h2>Category</h2>
+        <ul>
+            <li>Korean</li>
+            <li>Japanese</li>
+            <li>American</li>
+            <li>Chinese</li>
+        </ul>
+        <br>
+        <h2>Top Users</h2>
+        <ol>
+            <li>moonks</li>
+            <li>yooncastle</li>
+            <li>twkim91</li>
+        </ol>
+        <br>
+        <img src="https://s.wsj.net/public/resources/images/BN-XJ807_NYKORE_M_20180208130605.jpg" alt="korean restaurant pic" width="700"><br>
+        <a href="https://iamafoodblog.b-cdn.net/wp-content/uploads/2020/11/korean-bbq-8050.jpg"> See more Image</a>
+        <br>
+        <h2>Operating Time</h2>
+        <table border="1px" align="center">
+            <tr>
+                <th width="100px"></th>
+                <th width="100px">weekdays</th>
+                <th width="100px">weekends</th>
+            </tr>
+            <tr>
+                <th width="100px">hours</th>
+                <th width="100px">9:00~20:00</th>
+                <th width="100px">10:00~17:00</th>
+            </tr>
+        </table>
+
+    </div>
+    <div class="Bottom">
+        <p style="color:white; text-align:center"> made by Moon Stephen Kyungshin</p>
+    </div>
+</div>
+</body>
+</html>

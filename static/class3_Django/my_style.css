@@ -1,0 +1,33 @@
+h1 {
+    color: #993300;
+}
+
+h1 a {
+    color: deeppink;
+}
+
+h3 {
+    color: gray;
+    font-size: small;
+}
+
+#footer { /* use with id = "footer" */
+    display:inline-block;
+    width:100%;
+    height:1em;
+    padding: 2em 0.25em;
+    text-align: center;
+    font-size: xx-small;
+    background-color: beige;
+}
+
+.large-font { /* use with class="large-font" */
+    font-size: 50px;
+    color: purple;
+}
+
+#logo {
+    color: coral;
+    font-family: 'lobster';
+    font-size: 48px;
+}

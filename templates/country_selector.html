@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="{% url 'exchange_rate_info' %}" method="get">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <h4>Please select the country you are traveling from</h4>
+                    <select name="country_from" class="form-control d-inline-block" size="20">
+                        {% for country in countries %}
+                            <option value="{{ country.id }}"> {{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <h4>Please select the country you are traveling to</h4>
+                    <select name="country_to" class="form-control d-inline-block" size="20">
+                        {% for country in countries %}
+                            <option value="{{ country.id }}"> {{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="submit">
+    </form>
+
+    {{ countries }}
+
+{% endblock %}

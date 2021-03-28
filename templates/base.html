@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'class3_Django/my_style.css' %}">
+</head>
+<body>
+    <p style="text-align:left;">
+        <span id="logo">Currency App!</span>
+        <span style="float:right;">
+    {% if user.username %}
+        <span class="large-font">Hello {{ user.username }}!</span>
+        <a href="{% url 'logout' %}"><button>logout</button></a>
+    {% else %}
+        <span class="large-font">Hello Guest User!</span><br>
+        <a href="{% url 'login' %}"><button>login</button></a>
+    {% endif %}
+    </span>
+    </p>
+
+    {% block content %}
+            <-- content will go here -->
+    {% endblock %}
+    <div id="footer">
+        MOON STEPHEN KYUNGSHIN
+    </div>
+</body>
+</html>

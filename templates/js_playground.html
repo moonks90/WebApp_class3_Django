@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Hello JavaScript
+
+<script>var x = 1;
+console.log("The value of x is: ", x)</script>
+<script>
+    for (i = 0; i < scores.length; i++) {
+        var scores = [["John", 78], ["Jing", 91], ["Jahangir", 82], ["Jana", 54]];
+        if (scores[i][1] < 60) {
+            console.log("Refer ", scores[i][0], " for academic probation")
+        }
+    }
+</script>
+
+<script>
+    function probation(warn_level) {
+        var scores = [["John", 78], ["Jing", 91], ["Jahangir", 82], ["Jana", 54]];
+        var names = []
+        for (i = 0; i < scores.length; i++) {
+            if (scores[i][1] < warn_level) {
+                names.push(scores[i][0])
+            }
+        }
+        return names
+    }
+
+    console.log(probation(80));
+</script>
+
+</body>
+</html>

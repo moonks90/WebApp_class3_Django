@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime,timezone,date
 import requests
 from bs4 import BeautifulSoup
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Currency(models.Model):
@@ -55,6 +55,19 @@ class Rates(models.Model):
 
     def __str__(self):
         return self.currency.symbol + " " + self.x_currency + " " + str(self.rate)
+
+
+class AccountHolder(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    date_of_birth = models.DateField()
+    countries = models.ManyToManyField(Country)
+
+    def __str__(self):
+        return self.user.username
+
+    def __repr__(self):
+        return self.user.username
+
 
 """
 #####Default class script#####

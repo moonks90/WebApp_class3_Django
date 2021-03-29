@@ -55,6 +55,7 @@ def currency_selection(request):
     countries = Country.objects.all()
     data['countries'] = countries
 
+    previous = "None"
     try:
         user = request.user
         if user.is_authenticated:

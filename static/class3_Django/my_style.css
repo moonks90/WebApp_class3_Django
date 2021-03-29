@@ -31,3 +31,10 @@ h3 {
     font-family: 'lobster';
     font-size: 48px;
 }
+
+#map {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    border: 10px;
+}

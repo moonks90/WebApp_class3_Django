@@ -96,6 +96,19 @@ def exch_rate(request):
             pass
     except:
         pass
+
+    country_visited_list = list()
+    try:
+        if user.is_authenticated:
+            account_holder = AccountHolder.objects.get(user=user)
+        countries = account_holder.countries.all()
+        for country in countries:
+            lat, lon = support_functions.get_lat_lon(country.name)
+        country_visited_list.append([country.name, lat, lon])
+    except:
+        pass
+    data['countries_visited'] = country_visited_list
+
     return render(request, "exchange_detail.html", context=data)
 
 def register_new_user(request):

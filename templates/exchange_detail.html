@@ -4,3 +4,23 @@ You are going from {{ country1.name }} to {{ country2.name }}. The currency in {
 The currency in {{ country2.name }} is {{ currency2.symbol }}. The current exchange rate for 1 unit of {{ currency1.symbol}}
 is {{ rate }} units of {{ currency2.symbol }}
 {% endblock %}
+
+<p></p>
+{% if countries_visited %} }}
+    <h3>Countries you have visited recently!</h3>
+    <script type="text/javascript">
+        function countries_map(map, options) {
+            var results = {{ countries_visited|safe }};
+            map.setView(new L.LatLng("0.0", "0.0"), 2);
+            for (var i = 0; i < results.length; i++) {
+                marker = new L.marker([results[i][1], results[i][2]]).addTo(Map);
+                marker.bindTooltip(results[i][0], {
+                    permanent: false,
+                    offset: [0, 0]
+                });
+                marker.bindPopup(results[i][0]);
+            }
+        }
+    </script>
+    {% leaflet_map "map" callback="countries_map" %}
+{% endif %}

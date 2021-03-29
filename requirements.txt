@@ -18,3 +18,5 @@ sqlparse==0.4.1
 urllib3==1.26.3
 whitenoise==5.2.0
 wikipedia==1.4.0
+django-leaflet==0.27.1
+geopy==2.1.0

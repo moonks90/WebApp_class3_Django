@@ -67,3 +67,11 @@ def add_countries_and_currencies(currency_list):
                 cy = Country(name=country_name, capital=capital_city[0], wiki_link=wiki_link, currency=c)
             print("Creating new country object", cy)
         cy.save()
+
+def get_lat_lon(country):
+    from geopy.geocoders import Nominatim
+    geolocator = Nominatim(user_agent="web_app")
+    location = geolocator.geocode(country)
+    latitude = location.latitude
+    longitude = location.longitude
+    return latitude, longitude

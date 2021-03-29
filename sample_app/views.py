@@ -97,7 +97,7 @@ def exch_rate(request):
             pass
     except:
         pass
-
+    # test
     country_visited_list = list()
     try:
         if user.is_authenticated:
